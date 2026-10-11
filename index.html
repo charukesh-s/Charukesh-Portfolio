@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en" style="color-scheme: dark;"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>Charukesh | Video editor and motion designer for brands</title>
+<meta content="Charukesh edits and animates video for brands and agencies: short-form campaigns, product motion and podcast edits." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&amp;family=Inter:wght@400;500&amp;family=DM+Serif+Display:ital@1&amp;display=swap" rel="stylesheet"/>
+<style id="css">
+:root{--bg:#f5f6f8;--ink:#0e1116;--mute:#5b6270;--line:#d8dce3;--acc:#2f3bff;--tile:#e7eaf0;--on:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c0e12;--ink:#f1f3f7;--mute:#98a0ae;--line:#272b34;--acc:#8a93ff;--tile:#181c24;--on:#0c0e12}}
+:root[data-theme="dark"]{--bg:#0c0e12;--ink:#f1f3f7;--mute:#98a0ae;--line:#272b34;--acc:#8a93ff;--tile:#181c24;--on:#0c0e12}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Space Grotesk",Inter,system-ui,sans-serif;font-weight:500;line-height:1.08;letter-spacing:-.02em;margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font:500 19px "Space Grotesk",sans-serif;text-decoration:none;letter-spacing:-.01em}
+nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px max(clamp(20px,4vw,48px),calc((100% - 1200px)/2 + clamp(20px,4vw,48px))) 20px;font-size:17px}
+nav.open{display:flex}
+nav a{text-decoration:none;color:var(--ink)}nav a:not(.btn){padding:14px 0;border-bottom:1px solid var(--line)}nav a:not(.btn):hover{color:var(--acc)}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:500;font-size:15px;letter-spacing:.01em;border:1px solid var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn:hover{background:var(--acc);border-color:var(--acc);color:var(--on)}
+nav .btn{margin-top:16px;text-align:center;color:var(--bg)}nav .btn:hover{color:var(--on)}
+.hero{padding-top:clamp(72px,12vw,160px);padding-bottom:clamp(56px,8vw,96px)}
+.hero h1{font-size:clamp(34px,5.2vw,74px);max-width:16ch;letter-spacing:-.03em;line-height:1.06}
+.stats{list-style:none;margin:clamp(48px,7vw,88px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
+.stats li{padding:26px 16px 0 0}
+.stats li+li{padding-left:clamp(16px,3vw,40px);border-left:1px solid var(--line)}
+.stats b{display:block;font:500 clamp(30px,4vw,54px)/1 "Space Grotesk",sans-serif;letter-spacing:-.03em}
+.stats b i{font-style:normal;color:var(--acc)}
+.stats span{display:block;margin-top:10px;color:var(--mute);font-size:14px;letter-spacing:.01em;line-height:1.4}
+@media (max-width:640px){.stats li{padding-top:20px}.stats span{font-size:13px}}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(32px,5vw,80px);align-items:center}
+.hero-img{margin:0;justify-self:end;width:100%;max-width:420px;aspect-ratio:4/5;border-radius:6px;background:linear-gradient(160deg,var(--tile),var(--bg));outline:1px dashed var(--line);outline-offset:-1px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--mute)}
+.hero-img figcaption{font-size:14px;letter-spacing:.01em}
+
+@media (max-width:640px){
+.hero-grid{grid-template-columns:minmax(0,1fr) clamp(88px,28vw,128px);column-gap:14px;row-gap:0;align-items:center}
+.hero-text{display:contents}
+.hero-text h1{grid-column:1;grid-row:1}
+.hero-img{grid-column:2;grid-row:1;max-width:none;width:100%;gap:0}
+.hero-img figcaption{display:none}
+.hero-img svg{width:28px;height:28px}
+.hero-text>p,.hero-text>.cta{grid-column:1/-1}
+}
+.hero h1 span{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 span i{display:block;font-style:normal;animation:up .9s cubic-bezier(.2,.8,.2,1) both}
+.hero h1 span:nth-child(2) i{animation-delay:.12s}.hero h1 span:nth-child(3) i{animation-delay:.24s}
+@keyframes up{from{transform:translateY(105%)}to{transform:none}}
+.hero p{max-width:44ch;color:var(--mute);font-size:clamp(17px,1.6vw,20px);line-height:1.6;margin:28px 0 36px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.tc{margin-top:clamp(48px,7vw,88px);padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--mute);font-size:14px}
+.tc b{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600;letter-spacing:.02em}
+section{padding:clamp(56px,8vw,112px) 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+h2{font-size:clamp(28px,3.6vw,46px)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:40px 24px;align-items:start}
+.tile{grid-column:span 4}
+.tile[hidden]{display:none}
+.thumb{position:relative;display:block;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:linear-gradient(135deg,var(--a),var(--b))}
+.tile.tall .thumb{aspect-ratio:4/5}
+.play{position:absolute;left:20px;bottom:20px;width:52px;height:52px;border-radius:50%;background:#fff;display:grid;place-items:center;transition:transform .25s}
+.play::after{content:"";margin-left:4px;border-left:14px solid #101418;border-top:9px solid transparent;border-bottom:9px solid transparent}
+.thumb:hover .play{transform:scale(1.12)}
+.ph{background:var(--tile);outline:1px dashed var(--line);outline-offset:-1px}
+.ph .play{background:var(--ink)}.ph .play::after{border-left-color:var(--bg)}
+.tile h3{font-size:20px;margin:16px 0 4px;letter-spacing:-.02em}
+.tile p{margin:0;color:var(--mute);font-size:15px}
+.cols{display:grid;grid-template-columns:5fr 7fr;gap:48px}
+.svc{border-top:1px solid var(--line)}
+.svc div{display:grid;grid-template-columns:1fr 1.4fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.svc h3{font-size:22px}.svc p{margin:0;color:var(--mute)}
+.about p{margin:0 0 20px;max-width:60ch}.about p:first-of-type{font-size:clamp(20px,2.2vw,27px);line-height:1.4;font-weight:400;letter-spacing:-.01em}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.tools span{padding:7px 14px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--mute)}
+.contact{border-top:1px solid var(--line)}
+.contact h2{font-size:clamp(34px,5.4vw,76px);max-width:16ch;letter-spacing:-.035em}
+.contact .cta{margin:36px 0 40px}
+.links{display:flex;gap:24px;flex-wrap:wrap;color:var(--mute);font-size:15px}
+footer{padding:28px 0 40px;color:var(--mute);font-size:13px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sub{margin:12px 0 0;color:var(--mute);font-size:16px}
+.rolls{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(40px,6vw,72px);max-width:100%}
+.cat{min-width:0;max-width:100%}
+.roll{max-width:100%}
+.cat .chead{text-align:right;width:100%;max-width:1200px;margin:0 auto 20px;padding:0 clamp(20px,4vw,48px)}
+.chead h3{font-family:"DM Serif Display",Georgia,serif;font-style:italic;font-weight:400;font-size:clamp(26px,3vw,38px);letter-spacing:-.01em;line-height:1.05}
+.chead p{margin:8px 0 0;color:var(--mute);font-size:14px;letter-spacing:.01em}
+.roll{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.track{display:flex;width:max-content;animation:roll var(--d,70s) linear infinite}
+.roll.rev .track{animation-direction:reverse}
+.roll:hover .track,.roll:focus-within .track{animation-play-state:paused}
+.set{display:flex;gap:20px;padding-right:20px}
+@keyframes roll{to{transform:translateX(var(--shift,-50%))}}
+.item{flex:none;width:clamp(240px,27vw,360px)}
+.item.tall{width:clamp(170px,17vw,230px)}
+.item h4{font:500 17px/1.25 "Space Grotesk",sans-serif;letter-spacing:-.015em;margin:14px 0 4px}
+.item p{margin:0;color:var(--mute);font-size:14px}
+.item.tall .thumb{aspect-ratio:4/5}
+.menu{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 12px;border:1px solid var(--line);border-radius:50%;background:transparent;cursor:pointer}
+.menu i{display:block;height:2px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .2s}
+.menu[aria-expanded="true"] i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu[aria-expanded="true"] i:nth-child(2){opacity:0}
+.menu[aria-expanded="true"] i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#internship{background:var(--tile)}
+#internship .head{margin-bottom:28px}
+#internship .tile h3{font-size:16px;margin:10px 0 2px}
+#internship .tile p{font-size:14px}
+#internship .play{width:34px;height:34px;left:10px;bottom:10px}
+#internship .play::after{margin-left:3px;border-left-width:10px;border-top-width:6px;border-bottom-width:6px}
+#internship .lead{max-width:60ch;margin:0 0 40px;font-size:clamp(18px,1.9vw,22px);line-height:1.5;font-weight:400;letter-spacing:-.01em}
+.two>.tile{grid-column:auto}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;max-width:560px}
+@media (min-width:1600px){.wrap,.cat .chead{max-width:1360px}body{font-size:18px}}
+@media (max-width:1024px){.tile{grid-column:span 6}.cols{gap:32px}}
+@media (max-width:820px){
+.cols{grid-template-columns:1fr}
+.svc div{grid-template-columns:1fr;gap:6px}
+.two{gap:14px}
+}
+@media (max-width:640px){
+.tile{grid-column:span 12}
+.cta .btn{flex:1 1 100%;text-align:center}
+.item{width:62vw}.item.tall{width:44vw}
+.tc{flex-direction:column;gap:4px}
+}
+@media (prefers-reduced-motion:reduce){.track{animation:none}.roll{overflow-x:auto}.set[aria-hidden]{display:none}.hero h1 span i{animation:none}html{scroll-behavior:auto}.play{transition:none}}
+
+article.item,article.mini,article.tile{position:relative}
+.filled .thumb{background:linear-gradient(135deg,#171a20,#2b303b)!important;outline:none}
+.filled .thumb::before{content:"YouTube";position:absolute;top:14px;left:14px;font-size:12px;letter-spacing:.06em;color:#fff;opacity:.75}
+.filled .play{background:#f03}.filled .play::after{border-left-color:#fff}
+.dlg{position:fixed;inset:0;z-index:30;display:none;place-items:center;padding:20px;background:rgba(0,0,0,.65)}
+.dlg.on{display:grid}
+.dlg .box{width:min(460px,100%);max-height:100%;overflow:auto;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:24px}
+.dlg h3{font-size:22px;margin:0 0 16px}
+.dlg label{display:block;font-size:14px;color:var(--mute);margin:0 0 14px}
+.dlg input{display:block;width:100%;margin-top:6px;padding:12px 14px;font:400 16px Inter,sans-serif;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px}
+.dlg .msg{min-height:20px;margin:0 0 12px;font-size:14px;color:var(--acc)}
+.dlg .row{display:flex;gap:10px;flex-wrap:wrap}
+button.btn{font-family:inherit;cursor:pointer}
+#pdlg .box{width:min(960px,100%);padding:12px;background:#000;border-color:#000}
+#pdlg iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#000}
+#pdlg .bar2{display:flex;justify-content:space-between;gap:12px;padding:10px 4px 0;font-size:14px}
+#pdlg .bar2 a,#pdlg .bar2 button{color:#fff;background:none;border:0;font:inherit;cursor:pointer;text-decoration:underline}
+.tb{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:25}
+.ed{display:none;position:absolute;top:10px;right:10px;z-index:3;padding:7px 14px;border-radius:999px;border:0;background:#fff;color:#101418;font:500 13px Inter,sans-serif;cursor:pointer}
+body.editing .ed{display:block}
+body.editing .track{animation-play-state:paused}
+.thumb .play{left:50%;top:50%;bottom:auto;width:38px;height:38px;margin:-19px 0 0 -19px;background:rgba(255,255,255,.2);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.4)}
+.thumb .play::after{margin-left:3px;border-left:10px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent}
+.ph .play{background:color-mix(in srgb,var(--ink) 12%,transparent);border-color:color-mix(in srgb,var(--ink) 28%,transparent)}
+.ph .play::after{border-left-color:var(--ink)}
+.filled .thumb .play{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.4)}
+.filled .thumb .play::after{border-left-color:#fff}
+.tb{display:flex;gap:8px}
+.tb .btn,.tb .btn.ghost{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.dlg input[type=file]{padding:10px}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:40;padding:12px 20px;border-radius:999px;background:var(--ink);color:var(--bg);font:500 14px Inter,sans-serif;opacity:0;pointer-events:none;transition:opacity .25s}
+.toast.on{opacity:1}
+.tb{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100vw - 32px)}
+.hero-img.has{background-size:cover;background-position:center top;outline:none}
+.hero-img.has svg,.hero-img.has figcaption{display:none}
+.static2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.static2 .item{width:auto;min-width:0}
+@media (min-width:1600px){.static2{max-width:1360px}}
+@media (max-width:640px){.static2{gap:14px}.static2 .item h4{font-size:15px}.static2 .item p{font-size:13px}}
+.filled .thumb.img{background:#000 var(--img) center/cover no-repeat!important}
+.filled .thumb.img::before{display:none}
+</style>
+</head>
+<body class="">
+<!-- =====================================================================
+     STEP 1 OF 1: THE ONLY PART YOU NEED TO EDIT
+     Paste your YouTube links, video names, photo and resume below.
+     ===================================================================== -->
+<script id="config">
+/* ---------- PHOTO AND RESUME ----------
+   portrait : put your photo file in the same folder as this index.html and type its name, e.g. 'portrait.jpg'
+   resume   : put your PDF in the same folder and type its name, e.g. 'resume.pdf'
+              (or paste a full link, such as a Google Drive share link)
+   Leave '' to keep the placeholder / "Resume coming soon". */
+var SITE = {
+  portrait: 'potrait.png',
+  resume:   'https://drive.google.com/file/d/1ehUt7iJU8JvDYDg_XhpuYE_8ykbSo-PT/view?usp=drive_link',
+  channel:  'https://www.youtube.com/channel/UCKJPCrQDty0hPZ2UVYlN_5A'   /* ThePallikoodam YouTube channel link, for the "Visit the channel" button in the internship section. Empty = button stays hidden. */
+};
+
+/* ---------- VIDEOS ----------
+   link    : paste the YouTube link between the quotes (youtu.be, watch?v= and Shorts links all work)
+   title   : the name shown under the video
+   details : the small grey line under the title (client, role, year)
+   A video appears only when its link is filled in. Empty links keep the placeholder.
+   Example:  'motion-1': { link: 'https://youtu.be/AbCdEfGhIjK', title: 'Real Juice, lemon can', details: 'Concept piece' }, */
+var VIDEOS = {
+  /* ---------- SHORT FILMS (2 videos) ---------- */
+  'film-1': { link: 'https://youtu.be/tOOBaThnkp0', title: 'Yaaru Adhu', details: 'VFX short film' },
+  'film-2': { link: 'https://youtu.be/KEnveSzu3G8', title: 'Customer support', details: 'Micro film' },
+
+  /* ---------- COMMERCIAL EDITS (2 videos) ---------- */
+  'comm-1': { link: 'https://youtu.be/HEQAvK8BBek', title: 'Pume', details: 'Commercial remake' },
+  'comm-2': { link: 'https://youtu.be/t5grFQq5wGU', title: 'Nike Ad', details: 'Commercial' },
+
+  /* ---------- MOTION GRAPHICS (5 videos) ---------- */
+  'motion-1': { link: 'https://youtu.be/UpOeBHwAGDI', title: 'ChatGPT AD', details: 'Recreation - @MojtabaSorbi' },
+  'motion-2': { link: 'https://youtu.be/a7VIPK8pVLE', title: 'Kinetic typography Animation', details: '3D camera' },
+  'motion-3': { link: 'https://youtu.be/iV2Dgnj6Ouk', title: '3D carousel', details: '3D motion' },
+  'motion-4': { link: 'https://youtu.be/RU5iBN8_zns', title: '3D camera exploration', details: '3D camera and depth' },
+  'motion-5': { link: 'https://youtube.com/shorts/gCxfVYZw9q4?feature=share', title: 'Coffee motion graphic reel', details: 'My first motion graphics reel' },
+
+  /* ---------- SOCIAL MEDIA (5 videos) ---------- */
+  'social-1': { link: 'https://youtu.be/P3F0HSf6qf8', title: 'Spider Man', details: 'social media reel' },
+  'social-2': { link: 'https://youtube.com/shorts/C1mTdyapc7w?feature=share', title: 'Daily vlog', details: 'social media reel' },
+  'social-3': { link: 'https://youtu.be/ftZSCQfUPC0', title: 'Iron Man', details: 'social media reel' },
+  'social-4': { link: 'https://youtu.be/kO2soGGQ2wY', title: 'Naruto', details: 'social media reel' },
+  'social-5': { link: 'https://youtu.be/xRPOjoWVBqY', title: 'Thor', details: 'social media reel' },
+
+  /* ---------- INTERNSHIP AT THE PALLIKOODAM (2 videos) ---------- */
+  'intern-1': { link: 'https://youtu.be/El22RgaBPVA', title: 'Musicians in Conversation', details: 'Podcast interview edit, add the YouTube link' },
+  'intern-2': { link: 'https://youtu.be/LLxlEcWqDLA', title: 'Jam with Ranjith: Jingunamani sing-along', details: 'Highlights edit, add the YouTube link' },
+};
+</script>
+<!-- ===================== END OF THE PART YOU EDIT ===================== -->
+<header><div class="wrap bar">
+<a class="logo" href="#top">Charukesh</a>
+<button aria-controls="nav" aria-expanded="false" aria-label="Menu" class="menu"><i></i><i></i><i></i></button>
+<nav aria-label="Main" id="nav"><a href="#work">Work</a><a href="#internship">Internship</a><a href="#services">Services</a><a href="#about">About</a><a class="btn" href="#contact">Hire me</a></nav>
+</div></header>
+<main id="top">
+<div class="wrap hero"><div class="hero-grid"><div class="hero-text">
+<h1><span><i>Video that</i></span><span><i>holds a brand's</i></span><span><i>audience.</i></span></h1>
+<p>I'm Charukesh, a video editor and motion designer. I cut campaign reels, animate product spots and edit podcasts for brands and agencies.</p>
+<div class="cta"><a class="btn" href="#work">See the work</a><a class="btn ghost" href="mailto:charukesh.s26@gmail.com">Email Charukesh</a><a class="btn ghost resume" href="#">Download resume</a></div>
+</div>
+<figure aria-label="Portrait placeholder" class="hero-img"><svg aria-hidden="true" fill="none" height="40" stroke="currentColor" stroke-width="1.2" viewbox="0 0 24 24" width="40"><circle cx="12" cy="8.5" r="3.6"></circle><path d="M4.5 20c.9-4 4-6 7.5-6s6.6 2 7.5 6"></path></svg><figcaption>Portrait goes here</figcaption></figure>
+</div>
+<ul class="stats"><li><b>1<i>+</i></b><span>Years of freelancing experience</span></li><li><b>3<i>+</i></b><span>Projects done</span></li><li><b>5<i>+</i></b><span>Clients</span></li></ul>
+</div>
+<section id="work"><div class="wrap">
+<div class="head"><div><h2>The cutting room</h2><p class="sub">Four kinds of work, each on its own reel. Hover to pause.</p></div></div>
+</div>
+<div class="rolls">
+
+
+
+<div class="cat"><div class="chead"><h3>Short films</h3><p>Story-led work, cut for pace and mood.</p></div>
+<div class="static2"><article class="item" data-om="Add the title, year and his role" data-ot="Short film 1" data-slot="film-1"><a aria-label="Play Short film 1" class="thumb ph" href="#"><span class="play"></span></a><h4>Short film 1</h4><p>Add the title, year and his role</p></article><article class="item" data-om="Add the title, year and his role" data-ot="Short film 2" data-slot="film-2"><a aria-label="Play Short film 2" class="thumb ph" href="#"><span class="play"></span></a><h4>Short film 2</h4><p>Add the title, year and his role</p></article></div></div><div class="cat"><div class="chead"><h3>Commercial edits</h3><p>Ads and promos built around the brand message.</p></div>
+<div class="static2"><article class="item" data-om="Add the brand and the final video" data-ot="Commercial edit 1" data-slot="comm-1"><a aria-label="Play Commercial edit 1" class="thumb ph" href="#"><span class="play"></span></a><h4>Commercial edit 1</h4><p>Add the brand and the final video</p></article><article class="item" data-om="Add the brand and the final video" data-ot="Commercial edit 2" data-slot="comm-2"><a aria-label="Play Commercial edit 2" class="thumb ph" href="#"><span class="play"></span></a><h4>Commercial edit 2</h4><p>Add the brand and the final video</p></article></div></div><div class="cat"><div class="chead"><h3>Motion graphics</h3><p>Product and brand animation.</p></div>
+<div aria-label="Motion graphics reel" class="roll" role="region" style="--d:75s"><div class="track"><div class="set"><article class="item" data-om="Concept piece, product motion" data-ot="Real Juice, lemon can" data-slot="motion-1"><a aria-label="Play Real Juice, lemon can" class="thumb" href="#" style="--a:#0f7a2a;--b:#b8e34a"><span class="play"></span></a><h4>Real Juice, lemon can</h4><p>Concept piece, product motion</p></article><article class="item" data-om="Concept piece, product motion" data-ot="Dairy Milk Silk" data-slot="motion-2"><a aria-label="Play Dairy Milk Silk" class="thumb" href="#" style="--a:#3a1c8f;--b:#a67c5b"><span class="play"></span></a><h4>Dairy Milk Silk</h4><p>Concept piece, product motion</p></article><article class="item" data-om="Concept piece, product motion" data-ot="Kopiko snack spot" data-slot="motion-3"><a aria-label="Play Kopiko snack spot" class="thumb" href="#" style="--a:#14161b;--b:#e0a526"><span class="play"></span></a><h4>Kopiko snack spot</h4><p>Concept piece, product motion</p></article><article class="item" data-om="Add the title and the final video" data-ot="Motion piece 1" data-slot="motion-4"><a aria-label="Play Motion piece 1" class="thumb ph" href="#"><span class="play"></span></a><h4>Motion piece 1</h4><p>Add the title and the final video</p></article><article class="item" data-om="Add the title and the final video" data-ot="Motion piece 2" data-slot="motion-5"><a aria-label="Play Motion piece 2" class="thumb ph" href="#"><span class="play"></span></a><h4>Motion piece 2</h4><p>Add the title and the final video</p></article></div></div></div></div><div class="cat"><div class="chead"><h3>Social media</h3><p>Reels and shorts made for retention.</p></div>
+<div aria-label="Social media reel" class="roll rev" role="region" style="--d:65s"><div class="track"><div class="set"><article class="item tall" data-om="Add the client and the final reel" data-ot="Social media reel 1" data-slot="social-1"><a aria-label="Play Social media reel 1" class="thumb ph" href="#"><span class="play"></span></a><h4>Social media reel 1</h4><p>Add the client and the final reel</p></article><article class="item tall" data-om="Add the client and the final reel" data-ot="Social media reel 2" data-slot="social-2"><a aria-label="Play Social media reel 2" class="thumb ph" href="#"><span class="play"></span></a><h4>Social media reel 2</h4><p>Add the client and the final reel</p></article><article class="item tall" data-om="Add the client and the final reel" data-ot="Social media reel 3" data-slot="social-3"><a aria-label="Play Social media reel 3" class="thumb ph" href="#"><span class="play"></span></a><h4>Social media reel 3</h4><p>Add the client and the final reel</p></article><article class="item tall" data-om="Add the client and the final reel" data-ot="Social media reel 4" data-slot="social-4"><a aria-label="Play Social media reel 4" class="thumb ph" href="#"><span class="play"></span></a><h4>Social media reel 4</h4><p>Add the client and the final reel</p></article><article class="item tall" data-om="Add the client and the final reel" data-ot="Social media reel 5" data-slot="social-5"><a aria-label="Play Social media reel 5" class="thumb ph" href="#"><span class="play"></span></a><h4>Social media reel 5</h4><p>Add the client and the final reel</p></article></div></div></div></div></div></section>
+<section id="internship"><div class="wrap">
+<div class="head"><div><h2>Internship at ThePallikoodam</h2><p class="sub">Video editing intern, add dates here</p></div><a class="btn ghost" href="#">Visit the channel</a></div>
+<p class="lead">I edited long-form interviews and class highlights for ThePallikoodam's YouTube channel, turning raw recordings into episodes people finish.</p>
+<div class="two">
+<article class="tile" data-om="Podcast interview edit, add the YouTube link" data-ot="Musicians in Conversation" data-slot="intern-1"><a aria-label="Watch Musicians in Conversation on YouTube" class="thumb" href="#" style="--a:#3b4bff;--b:#9fe6c1"><span class="play"></span></a><h3>Musicians in Conversation</h3><p>Podcast interview edit, add the YouTube link</p></article>
+<article class="tile" data-om="Highlights edit, add the YouTube link" data-ot="Jam with Ranjith: Jingunamani sing-along" data-slot="intern-2"><a aria-label="Watch Jam with Ranjith on YouTube" class="thumb" href="#" style="--a:#f2c230;--b:#c2185b"><span class="play"></span></a><h3>Jam with Ranjith: Jingunamani sing-along</h3><p>Highlights edit, add the YouTube link</p></article>
+</div></div></section>
+<section id="services"><div class="wrap cols">
+<h2>What I do for brands</h2>
+<div class="svc">
+<div><h3>Campaign and reel editing</h3><p>Short-form cuts built for the first three seconds and for the full watch.</p></div>
+<div><h3>Motion graphics</h3><p>Titles, transitions and product animation that match your brand system.</p></div>
+<div><h3>VFX and compositing</h3><p>Rotoscoping, masking and tracking to clean up or extend a shot.</p></div>
+<div><h3>Thumbnails and social design</h3><p>Posters, covers and UI visuals that carry the same look as the video.</p></div>
+</div></div></section>
+<section id="about" style="padding-top:0"><div class="wrap cols about">
+<h2>About</h2>
+<div>
+<p>I started editing because a single cut or a change of music can turn an ordinary clip into something people finish.</p>
+<p>My work spans podcasts, product spots, reels and short films. I like briefs where the pacing, sound and motion have to work together, and I deliver files that are organised and ready to publish.</p>
+<div aria-label="Tools" class="tools"><span>Premiere Pro</span><span>After Effects</span><span>Blender</span><span>Photoshop</span><span>Illustrator</span><span>Maya 3D</span></div>
+</div></div></section>
+<section class="contact" id="contact"><div class="wrap">
+<h2>Have a brief? Send it over.</h2>
+<div class="cta"><a class="btn" href="mailto:charukesh.s26@gmail.com?subject=Video%20project%20enquiry">Email Charukesh</a><a class="btn ghost resume" href="#">Download resume</a></div>
+<div class="links"><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">YouTube</a><a href="#">Behance</a></div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Charukesh</span><span>Video editor and motion designer</span></div></footer>
+<script id="menujs">
+(function(){
+var mb=document.querySelector('.menu'),nv=document.getElementById('nav');
+mb.addEventListener('click',function(){var o=nv.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+nv.addEventListener('click',function(e){if(e.target.tagName==='A'){nv.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+document.addEventListener('click',function(e){var a=e.target.closest('a[href="#"]');if(a)e.preventDefault()});
+function rolls(){
+if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+document.querySelectorAll('.roll').forEach(function(r){
+var t=r.querySelector('.track'),sets=t.querySelectorAll('.set');
+for(var i=sets.length-1;i>0;i--)t.removeChild(sets[i]);
+var set=t.firstElementChild,w=set.getBoundingClientRect().width;
+if(!w)return;
+var n=Math.ceil(r.clientWidth/w)+1;
+for(var k=0;k<n;k++){var c=set.cloneNode(true);c.setAttribute('aria-hidden','true');c.querySelectorAll('a').forEach(function(a){a.tabIndex=-1});t.appendChild(c)}
+t.style.setProperty('--shift',-w+'px');t.style.setProperty('--d',(w/45)+'s');
+})}
+rolls();var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(rolls,200)});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){nv.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+document.addEventListener('click',function(e){if(!e.target.closest('header')){nv.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+})();
+</script>
+<div aria-label="Video player" class="dlg" id="pdlg" role="dialog"><div class="box"><iframe allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin" title="YouTube video"></iframe><div class="bar2"><a href="#" rel="noopener" target="_blank">Open on YouTube</a><button data-x="" type="button">Close</button></div></div></div>
+<script id="edjs">
+(function(){
+var tiles=[].slice.call(document.querySelectorAll('[data-slot]'));
+function yid(u){var m=String(u).trim().match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/))([\w-]{11})/);return m?m[1]:null}
+function thumb(l,id){var u=['maxresdefault','hq720','hqdefault'],i=0;(function next(){if(i>=u.length)return;var url='https://i.ytimg.com/vi/'+id+'/'+u[i++]+'.jpg',im=new Image();im.onload=function(){if(im.naturalWidth>200){l.style.setProperty('--img','url("'+url+'")');l.classList.add('img')}else next()};im.onerror=next;im.src=url})()}
+tiles.forEach(function(a){var s=VIDEOS[a.dataset.slot]||{},id=yid(s.link||''),l=a.querySelector('a.thumb'),h=a.querySelector('h3,h4'),p=a.querySelector('p');
+if(s.link&&!id)console.warn('Not a valid YouTube link for '+a.dataset.slot+': '+s.link);
+if(id){a.classList.add('filled');l.dataset.yt=id;thumb(l,id);h.textContent=s.title||a.dataset.ot;p.textContent=s.details||'';l.setAttribute('aria-label','Play '+h.textContent)}});
+if(SITE.portrait){var hi=document.querySelector('.hero-img');hi.classList.add('has');hi.style.backgroundImage='url("'+SITE.portrait+'")'}
+var ch=document.querySelector('#internship .head a.btn');if(ch){if(SITE.channel){ch.href=SITE.channel;ch.target='_blank';ch.rel='noopener'}else ch.style.display='none'}
+var toast;function say(m){if(!toast){toast=document.createElement('div');toast.className='toast';document.body.appendChild(toast)}toast.textContent=m;toast.classList.add('on');clearTimeout(say.t);say.t=setTimeout(function(){toast.classList.remove('on')},2600)}
+document.querySelectorAll('a.resume').forEach(function(a){if(SITE.resume){a.href=SITE.resume;a.setAttribute('download','');if(/^https?:/i.test(SITE.resume)){a.target='_blank';a.rel='noopener'}}});
+document.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('a.resume');if(l&&!SITE.resume){e.preventDefault();say('Resume coming soon.')}});
+var pd=document.getElementById('pdlg'),pf=pd.querySelector('iframe'),pl=pd.querySelector('a');
+if(location.protocol==='file:')pd.querySelector('.box').insertAdjacentHTML('afterbegin','<p style="color:#fff;font-size:14px;line-height:1.5;margin:0 0 10px">Preview note: YouTube refuses to play videos in-page when this site is opened as a file on your computer (Error 153). Once the site is online, the video plays right here.</p>');
+function closeP(){pd.classList.remove('on');pf.removeAttribute('src')}
+pd.addEventListener('click',function(e){if(e.target===pd||e.target.hasAttribute('data-x'))closeP()});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeP()});
+document.addEventListener('click',function(e){var l=e.target.closest&&e.target.closest('a.thumb');if(!l)return;e.preventDefault();var id=l.dataset.yt;if(!id)return;pf.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1'+(location.protocol.indexOf('http')===0?'&origin='+encodeURIComponent(location.origin):'');pl.href='https://www.youtube.com/watch?v='+id;pd.classList.add('on')});
+})();
+</script>
+</body></html>
